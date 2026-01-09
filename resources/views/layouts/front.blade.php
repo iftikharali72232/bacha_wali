@@ -12,7 +12,7 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="bg-slate-950 text-slate-100 antialiased">
+    <body class="bg-slate-950 text-slate-100 antialiased overflow-x-hidden">
         @yield('content')
     </body>
 </html>

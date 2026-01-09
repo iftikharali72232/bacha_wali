@@ -2,16 +2,16 @@
 
 @section('content')
 <div class="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 text-slate-100">
-    <div class="max-w-6xl mx-auto px-6 py-6">
-        <header class="flex items-center justify-between gap-6">
-            <a href="{{ route('home') }}" class="flex items-center gap-3 text-xl font-semibold tracking-[0.4em] uppercase">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+        <header class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-6">
+            <a href="{{ route('home') }}" class="flex items-center gap-3 text-base font-semibold uppercase tracking-[0.25em] sm:text-xl sm:tracking-[0.4em]">
                 <img
                     src="{{ asset('images/logo.png') }}"
                     alt="Bachawali logo"
                     class="h-10 w-auto rounded-full border border-white/20"
                     loading="lazy"
                 >
-                bachawali.com
+                <span class="hidden sm:inline">bachawali.com</span>
             </a>
             <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-200">
                 <a href="#services" class="hover:text-white">Services</a>
@@ -19,14 +19,14 @@
                 <a href="#contact" class="hover:text-white">Contact</a>
                 <a href="{{ route('admin.pages.index') }}" class="hover:text-white">Admin panel</a>
             </nav>
-            <div class="flex items-center gap-3">
+            <div class="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap md:w-auto md:justify-end">
                 @if (Route::has('login'))
-                    <a href="{{ route('login') }}" class="px-4 py-2 text-sm font-semibold border border-white/30 rounded-full hover:border-white transition">Admin Login</a>
+                    <a href="{{ route('login') }}" class="w-full px-4 py-2 text-center text-sm font-semibold border border-white/30 rounded-full hover:border-white transition sm:w-auto">Admin Login</a>
                 @endif
-                <a href="#contact" class="px-4 py-2 text-sm font-semibold bg-amber-500 text-slate-900 rounded-full shadow-lg shadow-amber-500/50">Request Quote</a>
+                <a href="#contact" class="w-full px-4 py-2 text-center text-sm font-semibold bg-amber-500 text-slate-900 rounded-full shadow-lg shadow-amber-500/50 sm:w-auto">Request Quote</a>
             </div>
         </header>
-        <div class="mt-6 flex flex-wrap items-center justify-center gap-6 rounded-2xl border border-white/10 bg-slate-950/60 px-6 py-4 text-sm text-slate-200">
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-6 rounded-2xl border border-white/10 bg-slate-950/60 px-4 sm:px-6 py-4 text-sm text-slate-200">
             <div class="flex items-center gap-2">
                 <span class="text-xs uppercase tracking-[0.5em] text-amber-300">Phone</span>
                 <span>0345-9356564 · 0312-7834567</span>
@@ -38,17 +38,17 @@
         </div>
     </div>
 
-    <main class="max-w-6xl mx-auto px-6 pb-24 space-y-20">
-        <section class="relative h-[540px] overflow-hidden rounded-[40px] border border-white/10 shadow-[0_80px_160px_rgba(2,6,23,0.85)]">
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 pb-24 space-y-20">
+        <section class="relative min-h-[540px] overflow-hidden rounded-3xl sm:rounded-[40px] border border-white/10 shadow-[0_80px_160px_rgba(2,6,23,0.85)]">
             <div class="absolute inset-0">
                 <div class="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-950/60 to-transparent"></div>
                 <div class="absolute inset-0" style="background-image: url('{{ asset('images/front_end.png') }}'); background-size: cover; background-position: center;"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/80"></div>
             </div>
-                <div class="relative z-10 flex h-full flex-col justify-center px-8 py-10 text-white">
-                <p class="text-xs uppercase tracking-[0.5em] text-amber-200">Bacha Wali · Government Contractor & General Order Supplier · Lahore</p>
-                <h1 class="mt-3 text-4xl font-semibold leading-tight lg:text-6xl">Massive buildings, resilient roads, and thriving housing societies in one build partner.</h1>
-                <p class="mt-4 max-w-3xl text-lg text-white/80">From high-rises and urban campuses to arterial roadways and gated communities, Bachawali.com choreographs every crane lift, material delivery, and safety audit with Pakistani precision.</p>
+                <div class="relative z-10 flex flex-col justify-center px-5 sm:px-8 py-10 text-white">
+                <p class="text-[10px] uppercase tracking-[0.45em] text-amber-200 sm:text-xs sm:tracking-[0.5em]">Bacha Wali · Government Contractor & General Order Supplier · Lahore</p>
+                <h1 class="mt-3 text-3xl font-semibold leading-tight sm:text-4xl lg:text-6xl">Massive buildings, resilient roads, and thriving housing societies in one build partner.</h1>
+                <p class="mt-4 max-w-3xl text-base text-white/80 sm:text-lg">From high-rises and urban campuses to arterial roadways and gated communities, Bachawali.com choreographs every crane lift, material delivery, and safety audit with Pakistani precision.</p>
                 <p class="mt-6 text-sm uppercase tracking-[0.6em] text-amber-300">Serving government, municipal, and private sectors across Punjab and the north</p>
                 <div class="mt-8 flex flex-wrap gap-3 text-sm">
                     <a href="#contact" class="px-5 py-3 rounded-full bg-white text-slate-900 font-semibold shadow-[0_15px_35px_rgba(15,23,42,0.45)]">Book a site visit</a>
@@ -58,10 +58,10 @@
         </section>
 
         <section id="services" class="space-y-8">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                     <p class="uppercase tracking-[0.4em] text-amber-200 text-xs">Featured services</p>
-                    <h2 class="text-3xl font-semibold">Buildings, roads, and housing societies — end-to-end delivery</h2>
+                    <h2 class="text-2xl font-semibold sm:text-3xl">Buildings, roads, and housing societies — end-to-end delivery</h2>
                 </div>
                 <a href="{{ route('admin.features.index') }}" class="text-sm font-semibold text-amber-300 hover:text-white">Refresh cards</a>
             </div>
@@ -92,10 +92,10 @@
         </section>
 
         <section id="gallery" class="space-y-8">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                     <p class="uppercase tracking-[0.4em] text-amber-200 text-xs">Site stories</p>
-                    <h2 class="text-3xl font-semibold">Field snapshots of buildings, roads, and societies</h2>
+                    <h2 class="text-2xl font-semibold sm:text-3xl">Field snapshots of buildings, roads, and societies</h2>
                 </div>
                 <p class="text-sm text-slate-400">These stills and motion clips trace our crews from basement pours to highway overlays and housing society handovers.</p>
             </div>
@@ -133,7 +133,7 @@
             </div>
         </section>
 
-        <section id="about" class="rounded-[32px] border border-white/5 bg-slate-900/60 p-8 shadow-[0_30px_70px_rgba(15,23,42,0.45)]">
+        <section id="about" class="rounded-[32px] border border-white/5 bg-slate-900/60 p-6 sm:p-8 shadow-[0_30px_70px_rgba(15,23,42,0.45)]">
             <div class="grid gap-8 lg:grid-cols-2">
                 <div class="space-y-5">
                     <p class="text-xs uppercase tracking-[0.4em] text-amber-200">About</p>
@@ -167,7 +167,7 @@
             </div>
         </section>
 
-        <section id="contact" class="rounded-[32px] border border-white/5 bg-white/5 p-8 shadow-[0_25px_60px_rgba(15,23,42,0.45)]">
+        <section id="contact" class="rounded-[32px] border border-white/5 bg-white/5 p-6 sm:p-8 shadow-[0_25px_60px_rgba(15,23,42,0.45)]">
             <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
                 <div class="space-y-6">
                     <div class="space-y-2">
