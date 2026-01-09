@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\FeatureController as AdminFeatureController;
+use App\Http\Controllers\Admin\ContactSubmissionController as AdminContactSubmissionController;
 use App\Http\Controllers\Admin\PageController as AdminPageController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
@@ -24,6 +25,8 @@ Route::middleware('auth')->group(function () {
                 'submissionsCount' => \App\Models\ContactSubmission::query()->count(),
             ]);
         })->name('dashboard');
+
+        Route::get('submissions', [AdminContactSubmissionController::class, 'index'])->name('submissions.index');
 
         Route::get('pages', [AdminPageController::class, 'index'])->name('pages.index');
         Route::put('pages/{page}', [AdminPageController::class, 'update'])->name('pages.update');

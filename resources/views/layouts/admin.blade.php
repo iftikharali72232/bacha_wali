@@ -58,6 +58,11 @@
                         <span class="text-[10px] uppercase tracking-[0.4em] text-slate-400">Cards</span>
                     </a>
 
+                    <a href="{{ route('admin.submissions.index', absolute: false) }}" class="{{ $linkBase }} {{ request()->routeIs('admin.submissions.*') ? $active : $inactive }}">
+                        <span>Contact Requests</span>
+                        <span class="text-[10px] uppercase tracking-[0.4em] text-slate-400">Inbox</span>
+                    </a>
+
                     <a href="{{ route('home', absolute: false) }}" class="{{ $linkBase }} {{ $inactive }}">
                         <span>Back to website</span>
                         <span class="text-[10px] uppercase tracking-[0.4em] text-slate-400">Public</span>

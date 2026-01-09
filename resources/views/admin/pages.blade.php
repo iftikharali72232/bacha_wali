@@ -11,7 +11,7 @@
                 <h2 class="text-2xl font-semibold">About builder</h2>
             </header>
 
-            <form action="{{ route('admin.pages.update', $about) }}" method="POST" class="space-y-5">
+            <form action="{{ route('admin.pages.update', $about, absolute: false) }}" method="POST" class="space-y-5">
                 @csrf
                 @method('PUT')
 
@@ -57,7 +57,7 @@
                 <h2 class="text-2xl font-semibold">Contact us</h2>
             </header>
 
-            <form action="{{ route('admin.pages.update', $contact) }}" method="POST" class="space-y-5">
+            <form action="{{ route('admin.pages.update', $contact, absolute: false) }}" method="POST" class="space-y-5">
                 @csrf
                 @method('PUT')
 

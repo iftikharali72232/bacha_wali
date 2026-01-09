@@ -11,7 +11,7 @@
                 <h2 class="text-2xl font-semibold">Add a feature</h2>
             </header>
 
-            <form action="{{ route('admin.features.store') }}" method="POST" class="grid gap-4 md:grid-cols-2">
+            <form action="{{ route('admin.features.store', absolute: false) }}" method="POST" class="grid gap-4 md:grid-cols-2">
                 @csrf
                 <label class="space-y-1 text-sm font-medium text-slate-200">
                     Title
@@ -47,7 +47,7 @@
                 <div class="space-y-5">
                     @foreach ($features as $feature)
                         <div class="rounded-2xl border border-slate-700 bg-slate-900/40 p-5 space-y-4">
-                            <form action="{{ route('admin.features.update', $feature) }}" method="POST" class="space-y-4">
+                            <form action="{{ route('admin.features.update', $feature, absolute: false) }}" method="POST" class="space-y-4">
                                 @csrf
                                 @method('PUT')
                                 <div class="grid gap-4 md:grid-cols-3">
@@ -74,7 +74,7 @@
                                 </div>
                             </form>
 
-                            <form id="delete-feature-{{ $feature->id }}" action="{{ route('admin.features.destroy', $feature) }}" method="POST" class="hidden">
+                            <form id="delete-feature-{{ $feature->id }}" action="{{ route('admin.features.destroy', $feature, absolute: false) }}" method="POST" class="hidden">
                                 @csrf
                                 @method('DELETE')
                             </form>
