@@ -19,6 +19,8 @@ class EnsureUserIsAdmin
             return $next($request);
         }
 
-        abort(403);
+        return redirect()
+            ->to(route('dashboard', absolute: false))
+            ->with('status', 'You do not have access to the admin panel.');
     }
 }

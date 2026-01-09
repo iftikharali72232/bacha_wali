@@ -17,6 +17,14 @@ Route::middleware('auth')->group(function () {
     })->middleware(['verified'])->name('dashboard');
 
     Route::prefix('admin')->name('admin.')->middleware('ensure.admin')->group(function () {
+        Route::get('dashboard', function () {
+            return view('admin.dashboard', [
+                'featuresCount' => \App\Models\Feature::query()->count(),
+                'pagesCount' => \App\Models\Page::query()->count(),
+                'submissionsCount' => \App\Models\ContactSubmission::query()->count(),
+            ]);
+        })->name('dashboard');
+
         Route::get('pages', [AdminPageController::class, 'index'])->name('pages.index');
         Route::put('pages/{page}', [AdminPageController::class, 'update'])->name('pages.update');
 

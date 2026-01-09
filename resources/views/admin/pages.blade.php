@@ -1,15 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
+@section('title', 'Pages')
+@section('heading', 'Pages')
 
 @section('content')
-<div class="py-12">
-    <div class="max-w-7xl mx-auto space-y-10">
-        @if (session('status'))
-            <div class="rounded-2xl bg-emerald-100/90 border border-emerald-200 p-5 text-emerald-900">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        <section class="rounded-3xl border border-slate-200/10 bg-white/5 p-8 shadow-lg">
+<div class="space-y-10">
+        <section class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-[0_30px_70px_rgba(15,23,42,0.45)]">
             <header class="mb-6">
                 <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Page content</p>
                 <h2 class="text-2xl font-semibold">About builder</h2>
@@ -51,11 +47,11 @@
                     </label>
                 </div>
 
-                <button type="submit" class="px-6 py-2 rounded-full bg-amber-500 text-slate-900 font-semibold">Save about page</button>
+                <button type="submit" class="w-full sm:w-auto px-6 py-2 rounded-full bg-amber-500 text-slate-900 font-semibold">Save about page</button>
             </form>
         </section>
 
-        <section class="rounded-3xl border border-slate-200/10 bg-white/5 p-8 shadow-lg">
+        <section class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-[0_30px_70px_rgba(15,23,42,0.45)]">
             <header class="mb-6">
                 <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Page content</p>
                 <h2 class="text-2xl font-semibold">Contact us</h2>
@@ -106,9 +102,8 @@
                     @endforeach
                 </div>
 
-                <button type="submit" class="px-6 py-2 rounded-full bg-amber-500 text-slate-900 font-semibold">Save contact page</button>
+                <button type="submit" class="w-full sm:w-auto px-6 py-2 rounded-full bg-amber-500 text-slate-900 font-semibold">Save contact page</button>
             </form>
         </section>
-    </div>
 </div>
 @endsection

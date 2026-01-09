@@ -17,12 +17,8 @@
                 <a href="#services" class="hover:text-white">Services</a>
                 <a href="#about" class="hover:text-white">About</a>
                 <a href="#contact" class="hover:text-white">Contact</a>
-                <a href="{{ route('admin.pages.index') }}" class="hover:text-white">Admin panel</a>
             </nav>
             <div class="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap md:w-auto md:justify-end">
-                @if (Route::has('login'))
-                    <a href="{{ route('login') }}" class="w-full px-4 py-2 text-center text-sm font-semibold border border-white/30 rounded-full hover:border-white transition sm:w-auto">Admin Login</a>
-                @endif
                 <a href="#contact" class="w-full px-4 py-2 text-center text-sm font-semibold bg-amber-500 text-slate-900 rounded-full shadow-lg shadow-amber-500/50 sm:w-auto">Request Quote</a>
             </div>
         </header>
@@ -31,9 +27,11 @@
                 <span class="text-xs uppercase tracking-[0.5em] text-amber-300">Phone</span>
                 <span>0345-9356564 · 0312-7834567</span>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                 <span class="text-xs uppercase tracking-[0.5em] text-amber-300">Address</span>
                 <span>Street # 6, Irum Colony, Nowshera Road, Mardan</span>
+                <span class="hidden sm:inline text-slate-500">•</span>
+                <span>Office No FF2 1ST FLOOR Plaza No 2 Eleven Heights 4 Acantilado Commercial Bahria 7 Islamabad</span>
             </div>
         </div>
     </div>
@@ -63,7 +61,6 @@
                     <p class="uppercase tracking-[0.4em] text-amber-200 text-xs">Featured services</p>
                     <h2 class="text-2xl font-semibold sm:text-3xl">Buildings, roads, and housing societies — end-to-end delivery</h2>
                 </div>
-                <a href="{{ route('admin.features.index') }}" class="text-sm font-semibold text-amber-300 hover:text-white">Refresh cards</a>
             </div>
             <div class="grid gap-6 md:grid-cols-2">
                 @foreach ($features as $feature)
@@ -188,7 +185,8 @@
                         </div>
                         <div>
                             <p class="text-[10px] uppercase tracking-[0.55em] text-slate-400">Address</p>
-                            <p class="text-lg font-semibold text-white">Street # 6, Irum Colony, Nowshera Road, Mardan</p>
+                            <p class="text-lg font-semibold text-white break-words leading-snug">Street # 6, Irum Colony, Nowshera Road, Mardan</p>
+                            <p class="mt-2 text-lg font-semibold text-white break-words leading-snug">Office No FF2 1ST FLOOR Plaza No 2 Eleven Heights 4 Acantilado Commercial Bahria 7 Islamabad</p>
                         </div>
                         <div>
                             <p class="text-[10px] uppercase tracking-[0.55em] text-slate-400">Office hours</p>

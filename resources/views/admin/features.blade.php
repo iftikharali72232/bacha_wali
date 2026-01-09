@@ -1,15 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
+@section('title', 'Features')
+@section('heading', 'Features')
 
 @section('content')
-<div class="py-12">
-    <div class="max-w-7xl mx-auto space-y-8">
-        @if (session('status'))
-            <div class="rounded-2xl bg-emerald-100/90 border border-emerald-200 p-5 text-emerald-900">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        <section class="rounded-3xl border border-slate-200/10 bg-white/5 p-8 shadow-lg">
+<div class="space-y-8">
+        <section class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-[0_30px_70px_rgba(15,23,42,0.45)]">
             <header class="mb-5 space-y-1">
                 <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Feature cards</p>
                 <h2 class="text-2xl font-semibold">Add a feature</h2>
@@ -34,12 +30,12 @@
                     <input name="sort_order" type="number" min="0" value="{{ old('sort_order', 0) }}" class="w-full rounded-2xl border border-slate-700 bg-slate-900/60 px-4 py-2 text-slate-100">
                 </label>
                 <div class="flex items-end">
-                    <button type="submit" class="px-5 py-2 rounded-full bg-amber-500 text-slate-900 font-semibold">Add feature</button>
+                    <button type="submit" class="w-full md:w-auto px-5 py-2 rounded-full bg-amber-500 text-slate-900 font-semibold">Add feature</button>
                 </div>
             </form>
         </section>
 
-        <section class="rounded-3xl border border-slate-200/10 bg-white/5 p-8 shadow-lg space-y-6">
+        <section class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-[0_30px_70px_rgba(15,23,42,0.45)] space-y-6">
             <header>
                 <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Existing cards</p>
                 <h2 class="text-2xl font-semibold">Maintain feature library</h2>
@@ -73,8 +69,8 @@
                                     <textarea name="description" rows="2" class="w-full rounded-2xl border border-slate-700 bg-slate-900/60 px-3 py-2 text-slate-100">{{ old('description', $feature->description) }}</textarea>
                                 </label>
                                 <div class="flex flex-wrap gap-3 items-center">
-                                    <button type="submit" class="px-4 py-2 rounded-full bg-amber-500 text-slate-900 font-semibold">Save</button>
-                                    <button type="submit" form="delete-feature-{{ $feature->id }}" class="px-4 py-2 rounded-full border border-slate-700 text-slate-200 hover:border-white">Delete</button>
+                                    <button type="submit" class="w-full sm:w-auto px-4 py-2 rounded-full bg-amber-500 text-slate-900 font-semibold">Save</button>
+                                    <button type="submit" form="delete-feature-{{ $feature->id }}" class="w-full sm:w-auto px-4 py-2 rounded-full border border-slate-700 text-slate-200 hover:border-white">Delete</button>
                                 </div>
                             </form>
 
@@ -87,6 +83,5 @@
                 </div>
             @endif
         </section>
-    </div>
 </div>
 @endsection
