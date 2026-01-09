@@ -16,7 +16,7 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     })->middleware(['verified'])->name('dashboard');
 
-    Route::prefix('admin')->name('admin.')->group(function () {
+    Route::prefix('admin')->name('admin.')->middleware('ensure.admin')->group(function () {
         Route::get('pages', [AdminPageController::class, 'index'])->name('pages.index');
         Route::put('pages/{page}', [AdminPageController::class, 'update'])->name('pages.update');
 
