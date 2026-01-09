@@ -14,10 +14,10 @@ class HomeController extends Controller
 
         $about = $this->pageOrFallback($pages->get('about'), [
             'slug' => 'about',
-            'title' => 'Bachawali Builders',
-            'headline' => 'Trusted contractor teams that think like owners.',
-            'summary' => 'We orchestrate complex builds and stylish renovations for commercial and residential clients across Punjab.',
-            'body' => 'From concept to closing walkthrough, our crew leans on precise schedules, proactive safety, and clear communication so every handshake leads to a long-term referral.',
+            'title' => 'Bacha Wali',
+            'headline' => 'PEC registered contractor (CA/331) for civil, electrical & mechanical works.',
+            'summary' => 'Sole proprietorship delivering buildings, roads, and housing society development with qualified engineers and reliable execution.',
+            'body' => 'Our scope spans road & pavement works, bridge structures, water supply & sewerage, general civil works, prefabricated/steel buildings, HVAC and fire prevention systems, lifts & escalators, building automation, LV/HV installation, specialized lighting, telecommunication, and IT & software engagements.',
             'cta_label' => 'See our case studies',
             'cta_url' => '#services',
             'meta' => [],
@@ -85,10 +85,12 @@ class HomeController extends Controller
     private function defaultFeatures(): Collection
     {
         $segments = [
-            ['title' => 'Project leadership', 'description' => 'We keep schedules visible, manage suppliers, and guard your finish line with weekly milestone reports.', 'icon' => '🧭', 'sort_order' => 1],
-            ['title' => 'Trade craftsmanship', 'description' => 'Certified carpenters, electricians, and MEP crews execute with built-in QA checklists.', 'icon' => '⚡', 'sort_order' => 2],
-            ['title' => 'Site safety', 'description' => 'Every crew member wears PPE, completes daily walkthroughs, and logs lessons learned for every job.', 'icon' => '🦺', 'sort_order' => 3],
-            ['title' => 'Client care', 'description' => 'Your schedule is our schedule, with a single point of contact for approvals, invoices, and inspections.', 'icon' => '🤝', 'sort_order' => 4],
+            ['title' => 'Roads & pavements', 'description' => 'Road construction, pavement works, drainage, retaining structures, and signcraft installation.', 'icon' => '🛣️', 'sort_order' => 1],
+            ['title' => 'Bridges & structures', 'description' => 'Bridge structures and structural works delivered with disciplined surveying, QA, and documentation.', 'icon' => '🌉', 'sort_order' => 2],
+            ['title' => 'Water & sewerage', 'description' => 'Water supply, sewerage works, and civil support for public infrastructure and communities.', 'icon' => '🚰', 'sort_order' => 3],
+            ['title' => 'Buildings & maintenance', 'description' => 'General buildings, concrete repairs, waterproofing, and prefabricated/steel framed buildings and industrial plants.', 'icon' => '🏗️', 'sort_order' => 4],
+            ['title' => 'MEP systems', 'description' => 'HVAC, fire prevention & protection, lifts & escalators, and building automation systems.', 'icon' => '⚙️', 'sort_order' => 5],
+            ['title' => 'Electrical, telecom & IT', 'description' => 'Low/high voltage installation, specialized lighting, telecommunication works, plus IT & software engagements.', 'icon' => '🔌', 'sort_order' => 6],
         ];
 
         return collect($segments)->map(fn ($segment) => new Feature($segment));

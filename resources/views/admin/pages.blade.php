@@ -95,6 +95,9 @@
 
                 <div class="grid gap-4 md:grid-cols-2">
                     @foreach (\App\Models\Page::CONTACT_META_KEYS as $key => $label)
+                        @if (in_array($key, ['phone', 'address'], true))
+                            @continue
+                        @endif
                         <label class="space-y-1 text-sm font-medium text-slate-200">
                             {{ $label }}
                             <input name="{{ $key }}" value="{{ old($key, $contact->metaValue($key)) }}" class="w-full rounded-2xl border border-slate-700 bg-slate-900/60 px-4 py-2 text-slate-100">

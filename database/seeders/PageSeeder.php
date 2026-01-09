@@ -16,10 +16,10 @@ class PageSeeder extends Seeder
         Page::updateOrCreate([
             'slug' => 'about',
         ], [
-            'title' => 'Bachawali Builders',
-            'headline' => 'Trusted contractor crews built for fast-moving communities.',
-            'summary' => 'We lead construction, renovation, and adaptive-reuse projects with laser focus on communication, schedule reliability, and craftsmanship.',
-            'body' => 'From design coordination to final walkthroughs, every job is backed by weekly milestone reviews, documented safety checks, and proactive materials forecasting to avoid downtime.',
+            'title' => 'Bacha Wali',
+            'headline' => 'PEC registered contractor (CA/331) for civil, electrical & mechanical works.',
+            'summary' => 'Sole proprietorship delivering buildings, roads, and housing society development with qualified engineers and disciplined execution.',
+            'body' => 'We handle civil and structural works, roads and pavements, bridge structures, water supply and sewerage, prefabricated/steel buildings, HVAC, fire prevention systems, lifts & escalators, building automation, LV/HV installation, specialized lighting, telecommunication installation/external works, and IT & software engagements—planned with safety, documentation, and quality control.',
             'cta_label' => 'See our case studies',
             'cta_url' => '#services',
         ]);

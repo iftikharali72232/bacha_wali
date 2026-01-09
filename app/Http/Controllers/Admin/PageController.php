@@ -41,17 +41,25 @@ class PageController extends Controller
             'cta_url' => 'nullable|url',
         ]);
 
-        $meta = [];
         if ($page->slug === 'contact') {
+            $meta = is_array($page->meta) ? $page->meta : [];
+            $lockedKeys = ['phone', 'address'];
+
             foreach (Page::CONTACT_META_KEYS as $key => $label) {
+                if (in_array($key, $lockedKeys, true)) {
+                    continue;
+                }
+
                 $value = $request->input($key);
                 if (! is_null($value) && $value !== '') {
                     $meta[$key] = $value;
+                } else {
+                    unset($meta[$key]);
                 }
             }
-        }
 
-        $attributes['meta'] = $meta;
+            $attributes['meta'] = $meta;
+        }
 
         $page->update($attributes);
 

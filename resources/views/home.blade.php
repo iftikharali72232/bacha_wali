@@ -44,10 +44,10 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/80"></div>
             </div>
                 <div class="relative z-10 flex flex-col justify-center px-5 sm:px-8 py-10 text-white">
-                <p class="text-[10px] uppercase tracking-[0.45em] text-amber-200 sm:text-xs sm:tracking-[0.5em]">Bacha Wali · Government Contractor & General Order Supplier · Lahore</p>
-                <h1 class="mt-3 text-3xl font-semibold leading-tight sm:text-4xl lg:text-6xl">Massive buildings, resilient roads, and thriving housing societies in one build partner.</h1>
-                <p class="mt-4 max-w-3xl text-base text-white/80 sm:text-lg">From high-rises and urban campuses to arterial roadways and gated communities, Bachawali.com choreographs every crane lift, material delivery, and safety audit with Pakistani precision.</p>
-                <p class="mt-6 text-sm uppercase tracking-[0.6em] text-amber-300">Serving government, municipal, and private sectors across Punjab and the north</p>
+                <p class="text-[10px] uppercase tracking-[0.45em] text-amber-200 sm:text-xs sm:tracking-[0.5em]">M/S Bacha Wali (CA/331) · PEC Registered Contractor · Sole Proprietor</p>
+                <h1 class="mt-3 text-3xl font-semibold leading-tight sm:text-4xl lg:text-6xl">Civil, electrical, and mechanical works—delivered with qualified engineers and disciplined execution.</h1>
+                <p class="mt-4 max-w-3xl text-base text-white/80 sm:text-lg">We deliver roads & pavements, buildings, housing societies, water supply & sewerage, MEP, LV/HV installation, fire protection, HVAC, building automation, telecom works, and more—planned with safety, documentation, and quality control.</p>
+                <p class="mt-6 text-sm uppercase tracking-[0.6em] text-amber-300">Serving government and private sectors across Pakistan</p>
                 <div class="mt-8 flex flex-wrap gap-3 text-sm">
                     <a href="#contact" class="px-5 py-3 rounded-full bg-white text-slate-900 font-semibold shadow-[0_15px_35px_rgba(15,23,42,0.45)]">Book a site visit</a>
                     <a href="#services" class="px-5 py-3 rounded-full border border-white/40 text-white/90">View project types</a>
@@ -137,7 +137,7 @@
                     <h2 class="text-3xl font-semibold">{{ $about->headline }}</h2>
                     <p class="text-lg text-slate-300">{{ $about->summary }}</p>
                     <p class="text-slate-200">{{ $about->body }}</p>
-                    <p class="text-slate-200">Bachawali.com manages civil, structural, and finishing works for institutional buildings, highways, and housing developments—from initial grading to grand opening.</p>
+                    <p class="text-slate-200">As a PEC registered contractor (CA/331), we cover civil, electrical, mechanical, and telecommunication scopes—coordinated so projects move from survey to handover without surprises.</p>
                     <a href="{{ $about->cta_url ?: '#contact' }}" class="inline-flex items-center justify-center px-5 py-2 rounded-full bg-white text-slate-900 font-semibold shadow-lg shadow-white/20">{{ $about->cta_label ?: 'Learn more' }}</a>
                 </div>
                 <div class="rounded-3xl border border-white/5 bg-gradient-to-br from-slate-800 to-slate-900 p-6">
@@ -145,19 +145,19 @@
                     <ul class="mt-4 space-y-4 text-slate-200">
                         <li class="flex items-start gap-3">
                             <span class="mt-1 text-amber-300">•</span>
-                            <p><strong>Local partners</strong> bring rapid permitting and materials sourcing near every site.</p>
+                            <p><strong>Registered capability</strong> with PEC contractor status (CA/331) and documented work processes.</p>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="mt-1 text-amber-300">•</span>
-                            <p><strong>Transparent estimates</strong> lock budgets so your leadership never chases hidden costs.</p>
+                            <p><strong>Qualified engineers</strong> across civil, mechanical, electrical, and telecom disciplines.</p>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="mt-1 text-amber-300">•</span>
-                            <p><strong>Modern tech</strong> keeps punch lists, RFIs, and materials tracking in one portal.</p>
+                            <p><strong>Quality & safety</strong> via inspections, checklists, and clear site documentation.</p>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="mt-1 text-amber-300">•</span>
-                            <p><strong>Infrastructure-first planners</strong> align building, road, electrical, and landscaping sequences so gated communities open on schedule.</p>
+                            <p><strong>End-to-end coordination</strong> aligning civil, MEP, finishing, and external works for on-time handover.</p>
                         </li>
                     </ul>
                 </div>
