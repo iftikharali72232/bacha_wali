@@ -16,10 +16,8 @@
             <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-200">
                 <a href="#services" class="hover:text-white">Services</a>
                 <a href="#about" class="hover:text-white">About</a>
-                <a href="#contact" class="hover:text-white">Contact</a>
             </nav>
             <div class="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap md:w-auto md:justify-end">
-                <a href="#contact" class="w-full px-4 py-2 text-center text-sm font-semibold bg-amber-500 text-slate-900 rounded-full shadow-lg shadow-amber-500/50 sm:w-auto">Request Quote</a>
             </div>
         </header>
         <div class="mt-6 flex flex-wrap items-center justify-center gap-6 rounded-2xl border border-white/10 bg-slate-950/60 px-4 sm:px-6 py-4 text-sm text-slate-200">
@@ -49,7 +47,6 @@
                 <p class="mt-4 max-w-3xl text-base text-white/80 sm:text-lg">We deliver roads & pavements, buildings, housing societies, water supply & sewerage, MEP, LV/HV installation, fire protection, HVAC, building automation, telecom works, and more—planned with safety, documentation, and quality control.</p>
                 <p class="mt-6 text-sm uppercase tracking-[0.6em] text-amber-300">Serving government and private sectors across Pakistan</p>
                 <div class="mt-8 flex flex-wrap gap-3 text-sm">
-                    <a href="#contact" class="px-5 py-3 rounded-full bg-white text-slate-900 font-semibold shadow-[0_15px_35px_rgba(15,23,42,0.45)]">Book a site visit</a>
                     <a href="#services" class="px-5 py-3 rounded-full border border-white/40 text-white/90">View project types</a>
                 </div>
             </div>
@@ -138,7 +135,7 @@
                     <p class="text-lg text-slate-300">{{ $about->summary }}</p>
                     <p class="text-slate-200">{{ $about->body }}</p>
                     <p class="text-slate-200">As a PEC registered contractor (CA/331), we cover civil, electrical, mechanical, and telecommunication scopes—coordinated so projects move from survey to handover without surprises.</p>
-                    <a href="{{ $about->cta_url ?: '#contact' }}" class="inline-flex items-center justify-center px-5 py-2 rounded-full bg-white text-slate-900 font-semibold shadow-lg shadow-white/20">{{ $about->cta_label ?: 'Learn more' }}</a>
+                    <a href="{{ $about->cta_url ?: '#services' }}" class="inline-flex items-center justify-center px-5 py-2 rounded-full bg-white text-slate-900 font-semibold shadow-lg shadow-white/20">{{ $about->cta_label ?: 'Learn more' }}</a>
                 </div>
                 <div class="rounded-3xl border border-white/5 bg-gradient-to-br from-slate-800 to-slate-900 p-6">
                     <p class="text-sm uppercase tracking-[0.4em] text-slate-400">Culture</p>
@@ -165,7 +162,7 @@
         </section>
 
         <section id="contact" class="rounded-[32px] border border-white/5 bg-white/5 p-6 sm:p-8 shadow-[0_25px_60px_rgba(15,23,42,0.45)]">
-            <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <div class="grid gap-10 lg:grid-cols-1">
                 <div class="space-y-6">
                     <div class="space-y-2">
                         <p class="text-xs uppercase tracking-[0.4em] text-amber-200">Get in touch</p>
@@ -192,52 +189,7 @@
                             <p class="text-[10px] uppercase tracking-[0.55em] text-slate-400">Office hours</p>
                             <p class="text-lg font-semibold text-white">{{ $contact->metaValue('hours', 'Mon–Sat · 8am–8pm') }}</p>
                         </div>
-                        <a href="{{ $contact->cta_url ?: 'mailto:hello@bachawali.com' }}" class="block text-center px-4 py-3 rounded-full bg-amber-500 text-slate-900 font-semibold">{{ $contact->cta_label ?: 'Schedule a callback' }}</a>
                     </div>
-                </div>
-                <div class="space-y-4">
-                    @if (session('contact_status'))
-                        <div class="rounded-2xl border border-emerald-200 bg-emerald-100/80 p-4 text-sm font-semibold text-emerald-900">
-                            {{ session('contact_status') }}
-                        </div>
-                    @endif
-
-                    @if ($errors->any())
-                        <div class="rounded-2xl border border-rose-200 bg-rose-100/80 p-4 text-sm text-rose-900">
-                            <p class="font-semibold">Please fix the highlighted fields.</p>
-                            <ul class="mt-2 list-disc list-inside space-y-1">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
-                    <form action="{{ route('contact.submit') }}" method="POST" enctype="multipart/form-data" class="space-y-4 rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-                        @csrf
-                        <div>
-                            <label class="text-xs uppercase tracking-[0.5em] text-slate-400" for="subject">Subject</label>
-                            <input id="subject" name="subject" value="{{ old('subject') }}" required class="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-3 text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none" placeholder="E.g., 'Tier 1 facility update'">
-                        </div>
-                        <div>
-                            <label class="text-xs uppercase tracking-[0.5em] text-slate-400" for="mobile">Mobile (required)</label>
-                            <input id="mobile" name="mobile" value="{{ old('mobile') }}" required class="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-3 text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none" placeholder="03XX XXXXXXX">
-                        </div>
-                        <div>
-                            <label class="text-xs uppercase tracking-[0.5em] text-slate-400" for="email">Email (optional)</label>
-                            <input id="email" name="email" value="{{ old('email') }}" class="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-3 text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none" placeholder="you@example.com">
-                        </div>
-                        <div>
-                            <label class="text-xs uppercase tracking-[0.5em] text-slate-400" for="description">Description</label>
-                            <textarea id="description" name="description" rows="4" class="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-3 text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none" placeholder="Share the scope, timeline, or challenges.">{{ old('description') }}</textarea>
-                        </div>
-                        <div>
-                            <label class="text-xs uppercase tracking-[0.5em] text-slate-400" for="attachments">Attachments</label>
-                            <p class="text-[10px] text-slate-500">Upload up to 3 files (PDF, DOC, JPG, PNG).</p>
-                            <input id="attachments" name="attachments[]" type="file" multiple class="mt-2 w-full text-sm text-slate-200 file:mr-4 file:rounded-full file:border-0 file:bg-amber-500 file:px-4 file:py-2 file:text-slate-900" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
-                        </div>
-                        <button type="submit" class="w-full rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 px-5 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-slate-950">Submit request</button>
-                    </form>
                 </div>
             </div>
         </section>
